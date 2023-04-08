@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    z-index: 0;
+}
+html{
+    scroll-behavior: smooth;   
+    overflow-x: hidden;
+}
+body{
+    background-color: #050507;
+}
+p{
+    color: var(--main-txt-color);
+    font-family: "Roboto";
+}
+button:hover{
+    cursor: pointer;
+}
+:root{
+    --main-bg-color: #08080A;
+    --main-txt-color: #E5E5E5;
+    --main-h-txt-color: #F6F5F2;
+    --second-txt-color: #AD9562;
+    --main-border-color: #AD9562;
+}
+
+/* Open section header */
+
+.header-section{
+    display: flex;
+    flex-direction: row;
+    background-image: url("/img/back-sect-1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
+.header-section aside{
+    height: 100vh;
+    width: 100px;
+    background-color: var(--main-bg-color);
+}
+.header-section aside nav{
+    height: 100%;
+}
+.header-section aside nav ul{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+.header-section aside nav ul a li svg{
+    width: 40px;
+}
+.header-section aside nav ul a li img{
+    width: 30px;
+}
+.header-section div{
+    margin-left: 100px;
+}
+.header-section div > img{
+    width: 156px;
+    height: 47px;
+    margin-top: 50px;
+}
+.header-section div h1{
+    width: 700px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 52px;
+    letter-spacing: -0.01em;
+    color: #F6F5F2;
+    margin-top: 140px;
+}
+.header-section div button{
+    width: 300px;
+    height: 50px;
+    background: #AD9562;
+    border-radius: 90px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 33px;
+    color: white;
+    outline: none;
+    border: none;
+    margin-top: 60px;
+}
+.header-section div p{
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+    width: 570px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: right;
+}
+
+/* Close section header */
+
+
+/* Open section contact-information */
+
+.contact-information{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 200px;
+    padding-right: 100px;
+    margin: 35px 0;
+}
+.contact-information div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 62%;
+}
+.contact-information p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #eaeaea;
+}
+.contact-information a{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    text-decoration-line: underline;
+    color: #eaeaea;
+}
+
+/* Close section contact-information */
+
+
+/* Open section about-us */
+
+.about-us{
+    padding-left: 150px;
+}
+.about-us h1{
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 59px;
+    color: #AD9562;
+}
+.about-us h2{
+    position: relative;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 59px;
+    color: var(--main-txt-color);
+    z-index: 3;
+}
+.about-us h3{
+    position: relative;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 62px;
+    line-height: 107px;
+    color: #26252A;
+    top: -85px;
+    left: 110px;
+    z-index: 1;
+}
+
+/* Close section about-us */
