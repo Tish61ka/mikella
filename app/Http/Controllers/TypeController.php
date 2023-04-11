@@ -12,4 +12,16 @@ class TypeController extends Controller
     {
         return Type::all();
     }
+
+    public function add(Request $request)
+    {
+        Type::create([
+            'type' => $request->input('type')
+        ]);
+    }
+
+    public function delete($id)
+    {
+        Type::where('id', $id)->delete();
+    }
 }

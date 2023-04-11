@@ -25,11 +25,11 @@
             </div>
         </transition>
 
-        <transition name="bounce2" mode="out-in">
+        <!-- <transition name="bounce2" mode="out-in">
             <div :key="route.path" class="translate2">
                 <img src="img/animation.png" alt="" />
             </div>
-        </transition>
+        </transition> -->
     </router-view>
 
     <transition name="scale" mode="out-in">

@@ -1,10 +1,10 @@
 <template>
   <div class="background">
     <form>
-      <h2>Данные для заказа</h2>
-      <input v-model="adress" type="text" placeholder="Адрес доставки" />
+      <h2>Данные для брони</h2>
+      <!-- <input v-model="adress" type="text" placeholder="Адрес доставки" /> -->
       <input v-model="number" type="text" placeholder="Номер телефона" />
-      <input type="text" v-model="active_promo" placeholder="Промокод (если есть)" />
+      <!-- <input type="text" v-model="active_promo" placeholder="Промокод (если есть)" /> -->
       <p class="warning" v-show="show == true">{{ messge }}</p>
       <button @click.prevent="dataOrder">Сохранить</button>
     </form>

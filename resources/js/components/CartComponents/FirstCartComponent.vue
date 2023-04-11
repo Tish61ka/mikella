@@ -10,7 +10,7 @@
             </slide>
           </carousel>
           <p>{{ product.id_product[0].name }}</p>
-          <p>Кол-во порций: {{ product.count }}</p>
+          <!-- <p>Кол-во порций: {{ product.count }}</p> -->
           <p v-if="active_promo">
             Цена:
             {{
@@ -61,14 +61,13 @@
           <form>
             <button
               v-if="
-                addres != 'NULL' &&
                 number != 'NULL' &&
-                addres != 'undefined' &&
-                number != 'undefined'
+                number != 'undefined' &&
+                number != ''
               "
               @click.prevent="createOrder(), countCart()"
             >
-              Оформить заказ
+             Подтвердить бронь
             </button>
             <button v-else @click.prevent="show = true">Оформить заказ</button>
             <div class="warning" v-show="show == true">
@@ -97,7 +96,7 @@
         </div>
       </div>
       <div class="cart_empty" v-if="cart.length == 0">
-        <h1>Корзина пуста</h1>
+        <h1>Броней нет</h1>
       </div>
     </div>
   </div>

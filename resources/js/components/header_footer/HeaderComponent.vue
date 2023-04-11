@@ -25,15 +25,15 @@
         <li><router-link to="/catalog">Каталог</router-link></li>
         <li v-show="token">
           <router-link to="/cart"
-            >Корзина
+            >Бронь
             <p class="cart_count" v-if="this.$store.state.user.cart_count != 0">
               {{ this.$store.state.user.cart_count }}
             </p></router-link
           >
         </li>
-        <li><router-link to="/about">О нас</router-link></li>
+        <!-- <li><router-link to="/about">О нас</router-link></li> -->
         <li>
-          <input type="search" placeholder="Поиск" v-model="search" />
+          <input type="search" placeholder="Поиск" disabled v-model="search" />
           <!-- <img
                         class="search"
                         src="img/search.png"
@@ -159,8 +159,8 @@ header {
 }
 .cart_count {
   position: absolute;
-  top: 3%;
-  right: 54%;
+  top: 25%;
+  right: 48%;
   background: #ad9562;
   width: 20px;
   height: 20px;

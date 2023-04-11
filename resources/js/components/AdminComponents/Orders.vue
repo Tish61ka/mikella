@@ -21,9 +21,8 @@
           <div style="display: flex; flex-direction: row; gap: 5vw">
             <select v-model="status" name="status" id="status">
               <option selected value="Выберите статус">Выберите статус</option>
-              <option value="Собран, ожидает курьера">Собран, ожидает курьера</option>
-              <option value="Передан курьеру">Передан курьеру</option>
-              <option value="В пути">В пути</option>
+              <option value="Ожидает подтверждения брони">Ожидает подтверждения брони</option>
+              <option value="Забронирован">Забронирован</option>
               <option value="Завершен">Завершен</option>
             </select>
             <button @click.prevent="changeStatusOrder(order.id)">Изменить статус</button>

@@ -26,10 +26,9 @@
     <div>
       <img src="/img/logo.png" alt="No Ethernet" />
       <h1>Мы предалагем самые лучшие номера для отдыха</h1>
-      <button>Посмотреть каталог</button>
+      <router-link to="/catalog"><button>Посмотреть каталог</button></router-link>
       <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-        Ipsum has been the industry's standard dummy text ever since the 1500s
+        Хотите провести отпуск в уютной обстановке, насладиться комфортом и высоким уровнем сервиса? Тогда вам стоит обратить внимание на нашу услугу аренды номеров в одном из лучших отелей города.
       </p>
     </div>
   </section>

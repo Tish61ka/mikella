@@ -63,13 +63,13 @@
         <p>Изменить данные</p>
       </div>
       <div v-on:click="showView('data_order')" id="orders" class="click">
-        <p>Данные для заказа</p>
+        <p>Данные для брони</p>
       </div>
       <div v-on:click="showView('historyOrders')" class="click" id="historyOrders">
-        <p>История заказов</p>
+        <p>История броней</p>
       </div>
       <div v-on:click="showView('now_orders')" class="click" id="nowOrders">
-        <p>Текущие заказы</p>
+        <p>Текущие брони</p>
       </div>
       <div @click.prevent="logout" class="click">
         <p>Выход</p>
@@ -220,13 +220,13 @@ export default {
           this.pagination = "Изменить данные";
         } else if (btn.id === "orders" && this.show === "data_order") {
           btn.classList.add("active");
-          this.pagination = "Данные для заказа";
+          this.pagination = "Данные для брони";
         } else if (btn.id === "historyOrders" && this.show === "historyOrders") {
           btn.classList.add("active");
-          this.pagination = "История заказов";
+          this.pagination = "История броней";
         } else if (btn.id === "nowOrders" && this.show === "now_orders") {
           btn.classList.add("active");
-          this.pagination = "Текущие заказы";
+          this.pagination = "Текущие брони";
         }
       });
     },
@@ -268,7 +268,7 @@ export default {
   width: 60%;
   height: 60vh;
   border-radius: 15px;
-  border: 4px #af3131 solid;
+  border: 4px #ad9562 solid;
   background: #212529;
   display: flex;
   flex-direction: column;
@@ -284,7 +284,7 @@ export default {
   transition: 0.5s;
 }
 .modal label:hover {
-  background: #af3131;
+  background: #ad9562;
   color: #212529;
   font-weight: bold;
 }
@@ -292,7 +292,7 @@ export default {
   width: 40%;
   height: 40px;
   background: transparent;
-  border: 2px #af3131 solid;
+  border: 2px #ad9562 solid;
   color: white;
   font-size: 17px;
   font-family: "Comfortaa", serif;
@@ -301,7 +301,7 @@ export default {
   transition: 0.5s;
 }
 .modal button:hover {
-  background: #af3131;
+  background: #ad9562;
   color: #212529;
   font-weight: bold;
 }

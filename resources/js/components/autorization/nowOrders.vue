@@ -3,7 +3,7 @@
     <div v-if="orders.length != 0">
       <div v-for="order in orders" :key="order">
         <div>
-          <h2>Заказ №{{ order.id }}</h2>
+          <h2>Бронь №{{ order.id }}</h2>
           <div
             style="
               display: flex;
@@ -18,7 +18,6 @@
                   <img :src="product.id_product[0].images[0].img" alt="" />
                   <p class="name">{{ product.id_product[0].name }}</p>
                   <p class="price">Цена: {{ product.id_product[0].price }} ₽</p>
-                  <p>Кол-во порций: {{ product.count }}</p>
                 </div>
               </router-link>
             </div>
@@ -31,7 +30,7 @@
       </div>
     </div>
     <div v-else>
-      <h1>Заказов нет!</h1>
+      <h1>Броней нет!</h1>
     </div>
   </div>
 </template>

@@ -8,14 +8,13 @@
           <h3>О КОМПАНИИ</h3>
         </div>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-          Ipsum has been the industry's standard dummy text ever since the 1500s,
+          У нас вы найдете просторные и уютные номера, оснащенные всем необходимым для комфортного проживания: удобной кроватью, телевизором, кондиционером, бесплатным Wi-Fi и просторной ванной комнатой с современной сантехникой.
         </p>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-          Ipsum has been the industry's standard dummy text ever since the 1500s,
+  Кроме того, наш отель предлагает широкий спектр услуг для гостей: оздоровительный центр, кафе и рестораны, конференц-залы, бассейн и многое другое. Вы можете выбрать номер, соответствующий вашим потребностям и бюджету.
+
         </p>
-        <a href="">Перейти к выбору номера</a>
+        <router-link to="/catalog">Перейти к выбору номера</router-link>
       </div>
       <img src="/img/image-sect-3.png" alt="No Ethernet" />
     </div>

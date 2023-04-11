@@ -24,13 +24,15 @@ class MenuController extends Controller
 
         $menu = Menu::get()->last();
 
-        $fileName = $request->file->getClientOriginalName();
-        $request->file->move(public_path('menu'), $fileName);
+        $images = $request->file;
 
-        Image::create([
-            'id_menus' => $menu->id,
-            'img' => '../menu/'.$fileName
-        ]);
+        foreach ($images as $image) {
+            $image->move(public_path('menu'), $image->getClientOriginalName());
+            Image::create([
+                'id_menus' => $menu->id,
+                'img' => '../menu/' . $image->getClientOriginalName()
+            ]);
+        }
     }
     
     public function delete($id)
@@ -52,12 +54,14 @@ class MenuController extends Controller
             'type' => $request->input('type')
         ]);
 
-        $fileName = $request->file->getClientOriginalName();
-        $request->file->move(public_path('menu'), $fileName);
+        $images = $request->file;
 
-        Image::create([
-            'id_menus' => $request->input('id_product'),
-            'img' => '../menu/'.$fileName
-        ]);
+        foreach ($images as $image) {
+            $image->move(public_path('menu'), $image->getClientOriginalName());
+            Image::create([
+                'id_menus' => $request->input('id_product'),
+                'img' => '../menu/' . $image->getClientOriginalName()
+            ]);
+        }
     }
 }

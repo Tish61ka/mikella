@@ -27,7 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['middleware' => 'auth:sanctum'], function(){
+Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/load-avatar', [LoadAvatarController::class, 'store']);
     Route::post('/changeInfoUser', [UserOutputController::class, 'changeInfoUser']);
     Route::post('/dataOrder', [UserOutputController::class, 'dataOrder']);
@@ -48,6 +48,8 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::get('/reviews', [ReviewController::class, 'all']);
     Route::post('/add/comment', [CommentController::class, 'addcomm']);
     Route::post('/delete/comment', [CommentController::class, 'delcomm']);
+    Route::post('/delete/type/{id}', [TypeController::class, 'delete']);
+    Route::post('/add/type', [TypeController::class, 'add']);
 });
 
 Route::post('/add_review', [ReviewController::class, 'add']);

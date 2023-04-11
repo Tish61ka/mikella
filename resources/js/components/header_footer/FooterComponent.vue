@@ -2,13 +2,20 @@
     <div>
         <footer>
             <ul>
-                <li>Политика конфедициальности</li>
-                <li>Условия возврата</li>
-                <li>О компании</li>
-                <li class="adaptive"><img src="../../../../public/img/logo.png" alt="" /></li>
-                <li>Соглашени на обработку данных</li>
-                <li>Партнеры</li>
-                <li>Условия сделки</li>
+                <a href="/policy.html">
+                    <li>Политика конфедициальности</li></a>
+                <router-link to="/catalog">
+                    <li>Каталог</li></router-link>
+                <a href="/Условия сделки.docx">
+                    <li>Условия брони</li></a>
+                <router-link to="/">
+                    <li class="adaptive"><img src="../../../../public/img/logo.png" alt="" /></li></router-link>
+                 <a href="/yslovie.html">
+                    <li>Соглашени на обработку данных</li></a>
+                <a href="https://Tish61ka.github.io/admin">
+                    <li>Партнеры</li></a>
+                <a href="/Условия сделки.docx">
+                    <li>Условия сделки</li></a>
             </ul>
         </footer>
     </div>

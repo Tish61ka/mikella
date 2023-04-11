@@ -19,33 +19,17 @@
       </div>
       <div class="adaptive_two">
         <h1>{{ this.product["name"] }}</h1>
-        <p class="price" v-if="active_promo">
-          {{ this.product["price"] - this.product["price"] * 0.15 }} ₽ /
-          <span v-if="this.product['name'] == 'Пончики шоколадные'">шт</span
-          ><span v-else>порция</span>
-        </p>
-        <p class="price" v-else>
+        <p class="price" >
           {{ this.product["price"] }} ₽ /
-          <span v-if="this.product['name'] == 'Пончики шоколадные'">шт</span
-          ><span v-else>порция</span>
+          <span>сутки</span
+          >
         </p>
         <div style="display: flex; flex-direction: column; width: 360px">
-          <div v-show="token" class="count">
-            <p>
-              {{ counter }} / кол-во
-              <span v-if="this.product['name'] == 'Пончики шоколадные'">шт</span
-              ><span v-else>порций</span>
-            </p>
-            <div>
-              <button @click="counter++">+</button>
-              <button @click="Plus">-</button>
-            </div>
-          </div>
           <button
             v-show="token"
             @click.prevent="addCart(product.id), countCart(), accessMessage(product.name)"
           >
-            В корзину
+            Забронировать
           </button>
         </div>
       </div>
@@ -151,7 +135,7 @@ export default {
     },
     accessMessage(name) {
       this.alert = true;
-      this.message = "Товар " + name + " добавлен в корзину";
+      this.message = name + " забронирован";
     },
     Plus() {
       if (this.counter == 1) {

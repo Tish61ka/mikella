@@ -3,7 +3,7 @@
     <div class="hovered">
       <h1>01</h1>
       <p>Одноместные номера</p>
-      <a href=""
+    <router-link to="/product/2"
         >Эко-дом<svg
           width="102"
           height="24"
@@ -16,12 +16,12 @@
             fill="#E5E5E5"
           />
         </svg>
-      </a>
+    </router-link>
     </div>
     <div>
       <h1>02</h1>
       <p>Двухместные номера</p>
-      <a href=""
+      <router-link to="/product/3"
         >Эко-дом<svg
           width="102"
           height="24"
@@ -34,12 +34,12 @@
             fill="#E5E5E5"
           />
         </svg>
-      </a>
+      </router-link>
     </div>
     <div>
       <h1>03</h1>
       <p>Номера для отдыха всей семьей</p>
-      <a href=""
+       <router-link to="/product/3"
         >Кирпичный-дом<svg
           width="102"
           height="24"
@@ -52,12 +52,12 @@
             fill="#E5E5E5"
           />
         </svg>
-      </a>
+      </router-link>
     </div>
     <div>
       <h1>04</h1>
       <p>Люкс номера</p>
-      <a href=""
+      <router-link to="/product/4"
         >VIP-дом<svg
           width="102"
           height="24"
@@ -70,7 +70,7 @@
             fill="#E5E5E5"
           />
         </svg>
-      </a>
+      </router-link>
     </div>
   </section>
 </template>

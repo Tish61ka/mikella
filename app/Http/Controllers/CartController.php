@@ -27,7 +27,7 @@ class CartController extends Controller
             ]);
         }
         else{
-            $count += $mycart->count;
+            // $count += $mycart->count;
             Cart::where('id_user',Auth::user()->id)->where('id_product',$id)->update([
                 'count' => $count
             ]);

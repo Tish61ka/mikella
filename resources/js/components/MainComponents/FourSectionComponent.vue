@@ -7,10 +7,10 @@
     </div>
     <form action="">
       <div>
-        <input type="email" required placeholder="Укажите свой e-mail " />
-        <button type="submit">Отправить</button>
+        <input type="email" v-model="email" required placeholder="Укажите свой e-mail " />
+        <button type="submit" @click.prevent="addReview()">Отправить</button>
       </div>
-      <input type="text" placeholder="Оставьте свой отзыв" />
+      <input type="text" v-model="text" placeholder="Оставьте свой отзыв" required />
     </form>
   </section>
 </template>

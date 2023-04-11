@@ -27,36 +27,48 @@
             </div>
           </div>
           <div class="last_active">
-            <div class="active">
-              <div class="range-slider">
-                <span @change="slider">
-                  <p>От</p>
-                  <input v-model.number="minPrice" type="number" :min="80" :max="5000" />
-                  <p>До</p>
-                  <input v-model.number="maxPrice" type="number" :min="80" :max="5000" />
-                </span>
-                <input
-                  @change="slider"
-                  v-model.number="minPrice"
-                  :min="80"
-                  :max="5000"
-                  step="1"
-                  type="range"
-                />
-                <input
-                  @change="slider"
-                  v-model.number="maxPrice"
-                  :min="80"
-                  :max="5000"
-                  step="1"
-                  type="range"
-                />
-                <svg width="100%" height="24"></svg>
+              <div class="active">
+                <div class="range-slider">
+                  <span @change="slider"
+                    ><p>От</p>
+                    <input
+                      v-model.number="minPrice"
+                      type="number"
+                      :min="min"
+                      :max="max"
+                    />
+                    <p>До</p>
+                    <input
+                      v-model.number="maxPrice"
+                      type="number"
+                      :min="min"
+                      :max="max"
+                    />
+                  </span>
+                  <input
+                    @change="slider"
+                    v-model.number="minPrice"
+                    :min="min"
+                    :max="max"
+                    step="1"
+                    type="range"
+                    class="slider"
+                  />
+                  <input
+                    @change="slider"
+                    v-model.number="maxPrice"
+                    :min="minPrice"
+                    :max="max"
+                    step="1"
+                    type="range"
+                    class="slider"
+                  />
+                  <svg width="100%" height="24"></svg>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       <button class="apply_filter" @click="show = false" v-show="mobile == true">
         Применить фильтры
       </button>
@@ -86,8 +98,12 @@
           <router-link
             :to="{ path: '/product/' + product.id }"
             v-if="
-              (product.price >= minPrice && product.price <= maxPrice && sort_on == '') ||
-              sort_on.includes(product.type.type)
+              (product.price >= minPrice &&
+                product.price <= maxPrice &&
+                sort_on == '') ||
+              (product.price >= minPrice &&
+                product.price <= maxPrice &&
+                sort_on.includes(product.type.type))
             "
           >
             <div class="card">
@@ -103,7 +119,7 @@
                   addCart(product.id), this.countCart(), accessMessage(product.name)
                 "
               >
-                Купить
+                Забронировать
               </button>
             </div>
           </router-link>
@@ -131,8 +147,10 @@ export default {
   },
   data() {
     return {
-      minPrice: 0,
+       minPrice: 0,
       maxPrice: 0,
+      max: 0,
+      min: 0,
       menu: [],
       price: [],
       token: localStorage.getItem("x_xsrf_token"),
@@ -145,6 +163,8 @@ export default {
       counter: 1,
       show: false,
       mobile: false,
+      notFound: false,
+      load: true,
     };
   },
   mounted() {
@@ -161,7 +181,7 @@ export default {
   methods: {
     accessMessage(name) {
       this.alert = true;
-      this.message = "Товар " + name + " добавлен в корзину";
+      this.message = name + " забронирован";
     },
     countCart() {
       if (this.token) {
@@ -188,8 +208,11 @@ export default {
         for (let index = 0; index < this.menu.length; index++) {
           this.price.push(this.menu[index]["price"]);
         }
-        this.minPrice = Math.min.apply(null, this.price);
+         this.minPrice = Math.min.apply(null, this.price);
         this.maxPrice = Math.max.apply(null, this.price);
+        this.max = Math.max.apply(null, this.price);
+        this.min = Math.min.apply(null, this.price);
+        this.load = false;
       });
     },
     AllTypes() {

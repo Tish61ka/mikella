@@ -15,7 +15,7 @@ class ReviewController extends Controller
     public function add(Request $request)
     {
         Review::create([
-            'number' => $request->input('number'),
+            'number' => '89673312786',
             'email' => $request->input('email'),
             'text' => $request->input('text'),
         ]);

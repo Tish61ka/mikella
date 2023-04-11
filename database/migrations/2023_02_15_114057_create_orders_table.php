@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->integer('order_price');
-            $table->string('status')->default('Собирается');
+            $table->string('status')->default('Ожидает подтверждения брони');
             $table->timestamps();
         });
     }
